@@ -17,13 +17,12 @@ public class CreateMessageActivity extends Activity {
 
 
     public void onSendMessage(View view) {
-
-       // EditText text = (EditText) findViewById(R.id.message);
-
-
+        EditText messageView = (EditText)findViewById(R.id.message);
+        String messageText = messageView.getText().toString();
         Intent intent = new Intent(this, ReceiveMessageActivity.class);
-//        intent.putExtra("text", text.getText().toString());
+        intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE, messageText);
         startActivity(intent);
-
     }
 }
+
+
